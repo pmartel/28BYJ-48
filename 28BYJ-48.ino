@@ -5,6 +5,11 @@
 #define STEPPER_PIN_3 11
 #define STEPPER_PIN_4 12
 
+#define STEPPER2_PIN_1 5
+#define STEPPER2_PIN_2 6
+#define STEPPER2_PIN_3 7
+#define STEPPER2_PIN_4 8
+
 int step_number = 0;
 long delay_u = 1800;
 
@@ -13,6 +18,10 @@ void setup() {
   pinMode(STEPPER_PIN_2, OUTPUT);
   pinMode(STEPPER_PIN_3, OUTPUT);
   pinMode(STEPPER_PIN_4, OUTPUT);
+  pinMode(STEPPER2_PIN_1, OUTPUT);
+  pinMode(STEPPER2_PIN_2, OUTPUT);
+  pinMode(STEPPER2_PIN_3, OUTPUT);
+  pinMode(STEPPER2_PIN_4, OUTPUT);
 }
 
 void loop() {
@@ -40,24 +49,40 @@ void OneStep(bool dir){
       digitalWrite(STEPPER_PIN_2, LOW);
       digitalWrite(STEPPER_PIN_3, LOW);
       digitalWrite(STEPPER_PIN_4, LOW);
+      digitalWrite(STEPPER2_PIN_1, HIGH);
+      digitalWrite(STEPPER2_PIN_2, LOW);
+      digitalWrite(STEPPER2_PIN_3, LOW);
+      digitalWrite(STEPPER2_PIN_4, LOW);
       break;
     case 1:
       digitalWrite(STEPPER_PIN_1, LOW);
       digitalWrite(STEPPER_PIN_2, HIGH);
       digitalWrite(STEPPER_PIN_3, LOW);
       digitalWrite(STEPPER_PIN_4, LOW);
+      digitalWrite(STEPPER2_PIN_1, LOW);
+      digitalWrite(STEPPER2_PIN_2, HIGH);
+      digitalWrite(STEPPER2_PIN_3, LOW);
+      digitalWrite(STEPPER2_PIN_4, LOW);
       break;
     case 2:
       digitalWrite(STEPPER_PIN_1, LOW);
       digitalWrite(STEPPER_PIN_2, LOW);
       digitalWrite(STEPPER_PIN_3, HIGH);
       digitalWrite(STEPPER_PIN_4, LOW);
+      digitalWrite(STEPPER2_PIN_1, LOW);
+      digitalWrite(STEPPER2_PIN_2, LOW);
+      digitalWrite(STEPPER2_PIN_3, HIGH);
+      digitalWrite(STEPPER2_PIN_4, LOW);
       break;
     case 3:
       digitalWrite(STEPPER_PIN_1, LOW);
       digitalWrite(STEPPER_PIN_2, LOW);
       digitalWrite(STEPPER_PIN_3, LOW);
       digitalWrite(STEPPER_PIN_4, HIGH);
+      digitalWrite(STEPPER2_PIN_1, LOW);
+      digitalWrite(STEPPER2_PIN_2, LOW);
+      digitalWrite(STEPPER2_PIN_3, LOW);
+      digitalWrite(STEPPER2_PIN_4, HIGH);
       break;
     } 
   }
@@ -68,24 +93,40 @@ void OneStep(bool dir){
       digitalWrite(STEPPER_PIN_2, LOW);
       digitalWrite(STEPPER_PIN_3, LOW);
       digitalWrite(STEPPER_PIN_4, HIGH);
+      digitalWrite(STEPPER2_PIN_1, LOW);
+      digitalWrite(STEPPER2_PIN_2, LOW);
+      digitalWrite(STEPPER2_PIN_3, LOW);
+      digitalWrite(STEPPER2_PIN_4, HIGH);
       break;
     case 1:
       digitalWrite(STEPPER_PIN_1, LOW);
       digitalWrite(STEPPER_PIN_2, LOW);
       digitalWrite(STEPPER_PIN_3, HIGH);
       digitalWrite(STEPPER_PIN_4, LOW);
+      digitalWrite(STEPPER2_PIN_1, LOW);
+      digitalWrite(STEPPER2_PIN_2, LOW);
+      digitalWrite(STEPPER2_PIN_3, HIGH);
+      digitalWrite(STEPPER2_PIN_4, LOW);
       break;
     case 2:
       digitalWrite(STEPPER_PIN_1, LOW);
       digitalWrite(STEPPER_PIN_2, HIGH);
       digitalWrite(STEPPER_PIN_3, LOW);
       digitalWrite(STEPPER_PIN_4, LOW);
+      digitalWrite(STEPPER2_PIN_1, LOW);
+      digitalWrite(STEPPER2_PIN_2, HIGH);
+      digitalWrite(STEPPER2_PIN_3, LOW);
+      digitalWrite(STEPPER2_PIN_4, LOW);
       break;
     case 3:
       digitalWrite(STEPPER_PIN_1, HIGH);
       digitalWrite(STEPPER_PIN_2, LOW);
       digitalWrite(STEPPER_PIN_3, LOW);
       digitalWrite(STEPPER_PIN_4, LOW);
+      digitalWrite(STEPPER2_PIN_1, HIGH);
+      digitalWrite(STEPPER2_PIN_2, LOW);
+      digitalWrite(STEPPER2_PIN_3, LOW);
+      digitalWrite(STEPPER2_PIN_4, LOW);
     } 
   }
   step_number++;
